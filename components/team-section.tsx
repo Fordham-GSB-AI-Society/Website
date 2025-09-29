@@ -53,7 +53,7 @@ export function TeamSection() {
       name: "SN Attreya",
       role: "Vice President of Marketing",
       major: "FTMBA '27",
-      image: "/sn.jpg",
+      image: "/SN.jpg",
       email: "",
       linkedin: "",
       github: ""

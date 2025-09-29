@@ -36,7 +36,11 @@ export function HeroSection() {
             and builders shaping tomorrow's technology.
           </p>
           </motion.div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          className= "flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="https://fordhamgsb.campuslabs.com/engage/organization/ais" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="text-lg px-8 py-6">
               Join Our Community
@@ -44,7 +48,7 @@ export function HeroSection() {
             </Button>
             </a>
 
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
