@@ -1,7 +1,15 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Github, Linkedin, Mail } from "lucide-react"
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
+import { useRef } from "react"
 
 export function TeamSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+
   // Use bio: tag if you want to include bio
   const team = [
     {
@@ -92,33 +100,43 @@ export function TeamSection() {
   ]
 
   return (
-    <section id="team" className="py-24">
+    <section id="team" className="py-24" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Meet Our Team</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
             Our dedicated leadership team is committed to fostering AI education and building a strong community of AI
             enthusiasts at Fordham.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-muted">
-                  <img
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-primary font-medium mb-1">{member.role}</p>
-                <p className="text-sm text-muted-foreground mb-3">{member.major}</p>
-                <p className="text-sm text-muted-foreground mb-4 text-pretty">{member.bio}</p>
-
-                <div className="flex justify-center space-x-3">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card className="text-center hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
+                <CardContent className="p-6">
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-muted transition-transform duration-300 hover:scale-110">
+                    <img
+                      src={member.image || "/placeholder.svg"}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                  <p className="text-primary font-medium mb-1">{member.role}</p>
+                  <p className="text-sm text-muted-foreground mb-3">{member.major}</p>
+                  <p className="text-sm text-muted-foreground mb-4 text-pretty">{member.bio}</p>
+                  <div className="flex justify-center space-x-3">
                 <a href={member.email} target="_blank" rel="noopener noreferrer">
                   <button className="p-2 hover:bg-muted rounded-full transition-colors">
                     <Mail className="h-4 w-4" />
@@ -135,8 +153,9 @@ export function TeamSection() {
                   </button>
                   </a>
                 </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
