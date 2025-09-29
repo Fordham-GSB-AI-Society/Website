@@ -19,7 +19,7 @@ export function EventsSection() {
     },
     {
       title: "Fordham AI Society x Qlaws.ai Hackathon Event",
-      date: "November 15, 2025",
+      date: "November 15th, 2025",
       time: "TBA",
       location: "Fordham Lincoln Center - McNally Amphitheater, 140 W 62nd St",
       description: "",
