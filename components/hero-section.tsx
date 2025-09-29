@@ -9,9 +9,8 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8">
-            <span className="mr-2">🤖</span>
-            Fordham Artificial Intelligence Society
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 mt-16">
+            <span className="logo"> <img src="/fgsbais_logo-removebg-preview.png"></img></span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance">
@@ -30,10 +29,7 @@ export function HeroSection() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             </a>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-transparent">
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
+
           </div>
         </div>
       </div>

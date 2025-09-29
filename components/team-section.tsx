@@ -2,35 +2,93 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Github, Linkedin, Mail } from "lucide-react"
 
 export function TeamSection() {
+  // Use bio: tag if you want to include bio
   const team = [
     {
-      name: "Sarah Chen",
+      name: "Mainak Panja",
       role: "President",
-      major: "Computer Science '25",
-      image: "/professional-woman-headshot.png",
-      bio: "Passionate about AI ethics and machine learning applications in healthcare.",
+      major: "FTMBA '26",
+      image: "/mainak.jpg",
+      email: "",
+      linkedin: "",
+      github: ""
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Vice President",
-      major: "Data Science '25",
-      image: "/professional-man-headshot.png",
-      bio: "Focuses on natural language processing and conversational AI systems.",
+      name: "Ipsha Gautam",
+      role: "Vice President of Event and Outreach",
+      major: "MS AI '26",
+      image: "/ipsha.jpg",
+      email: "",
+      linkedin: "",
+      github: ""
     },
     {
-      name: "Emily Zhang",
-      role: "Technical Lead",
-      major: "Computer Science '26",
-      image: "/professional-woman-tech-headshot.png",
-      bio: "Specializes in computer vision and deep learning architectures.",
+      name: "Sam Cleland",
+      role: "Vice President of Tech and Research",
+      major: "FTMBA '26",
+      image: "/sam.jpg",
+      email: "esc11@fordham.edu",
+      linkedin: "https://www.linkedin.com/in/samcleland34/",
+      github: "https://github.com/SamCleland034"
     },
     {
-      name: "David Kim",
-      role: "Events Coordinator",
-      major: "Information Systems '24",
-      image: "/professional-headshot-man-business.jpg",
-      bio: "Organizes workshops and connects students with industry professionals.",
+      name: "Grace",
+      role: "Vice President of",
+      major: "MS AI '26",
+      image: "/grace.png",
+      email: "",
+      linkedin: "",
+      github: ""
     },
+
+    {
+      name: "SN Attreya",
+      role: "Vice President of Marketing",
+      major: "FTMBA '27",
+      image: "/sn.jpg",
+      email: "",
+      linkedin: "",
+      github: ""
+    },
+
+    {
+      name: "Nathanael Lara",
+      role: "Assistant VP of Tech and Research",
+      major: "MS AI '26",
+      image: "/nathan.jpg",
+      email: "",
+      linkedin: "",
+      github: ""
+    },
+    {
+      name: "Shawyan T",
+      role: "Assistant VP of Tech and Research",
+      major: "MS Finance '26",
+      image: "/shawyan.jpg",
+      email: "",
+      linkedin: "",
+      github: ""
+    },
+        {
+      name: "Habana Rubio",
+      role: "Assistant VP of Event and Outreach",
+      major: "MS Marketing Intelligence '26",
+      image: "/habana.jpg",
+      email: "",
+      linkedin: "",
+      github: ""
+    },
+
+    {
+      name: "Gabriele Usai",
+      role: "Treasurer",
+      major: "MS IT '26",
+      image: "/gabriele.jpg",
+      email: "",
+      linkedin: "",
+      github: ""
+    },
+    
   ]
 
   return (
@@ -61,15 +119,21 @@ export function TeamSection() {
                 <p className="text-sm text-muted-foreground mb-4 text-pretty">{member.bio}</p>
 
                 <div className="flex justify-center space-x-3">
+                <a href={member.email} target="_blank" rel="noopener noreferrer">
                   <button className="p-2 hover:bg-muted rounded-full transition-colors">
                     <Mail className="h-4 w-4" />
                   </button>
+                  </a>
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
                   <button className="p-2 hover:bg-muted rounded-full transition-colors">
                     <Linkedin className="h-4 w-4" />
                   </button>
+                  </a>
+                  <a href={member.github} target="_blank" rel="noopener noreferrer">
                   <button className="p-2 hover:bg-muted rounded-full transition-colors">
                     <Github className="h-4 w-4" />
                   </button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
