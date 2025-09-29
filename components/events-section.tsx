@@ -5,28 +5,20 @@ import { Calendar, MapPin, Clock } from "lucide-react"
 export function EventsSection() {
   const events = [
     {
-      title: "AI Workshop: Introduction to Machine Learning",
-      date: "March 15, 2024",
-      time: "6:00 PM - 8:00 PM",
-      location: "Fordham Lincoln Center - Room 415",
-      description: "Learn the fundamentals of machine learning with hands-on coding exercises.",
-      type: "Workshop",
+      title: "Fordham AI Society Icebreaker Event",
+      date: "October 23th, 2025",
+      time: "8:00 PM - 10:00 PM",
+      location: "TBA",
+      description: "",
+      type: "Networking Event",
     },
     {
-      title: "Guest Speaker: Industry AI Applications",
-      date: "March 22, 2024",
-      time: "7:00 PM - 8:30 PM",
-      location: "Virtual Event",
-      description: "Hear from AI professionals about real-world applications in various industries.",
-      type: "Speaker Event",
-    },
-    {
-      title: "AI Hackathon 2024",
-      date: "April 5-7, 2024",
-      time: "48 Hours",
-      location: "Fordham Rose Hill Campus",
-      description: "Build innovative AI solutions in teams over a weekend-long hackathon.",
-      type: "Hackathon",
+      title: "Fordham AI Society x Qlaws.ai Hackathon Event",
+      date: "November 15, 2025",
+      time: "TBA",
+      location: "Fordham Lincoln Center - McNally Amphitheater, 140 W 62nd St",
+      description: "",
+      type: "Competition",
     },
   ]
 
