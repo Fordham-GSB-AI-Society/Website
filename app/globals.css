@@ -122,4 +122,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+}
+
+img {
+  width: 400px,
+  height: 300px
 }

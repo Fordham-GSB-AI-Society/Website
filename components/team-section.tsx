@@ -40,7 +40,7 @@ export function TeamSection() {
       github: "https://github.com/SamCleland034"
     },
     {
-      name: "Grace A",
+      name: "Grace Assogba",
       role: "Vice President of Event and Outreach",
       major: "MS AI '26",
       image: "/grace.jpg",
