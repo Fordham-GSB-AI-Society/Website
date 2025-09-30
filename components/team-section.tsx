@@ -35,7 +35,7 @@ export function TeamSection() {
       role: "Vice President of Tech and Research",
       major: "FTMBA '26",
       image: "/sam.jpg",
-      email: "esc11@fordham.edu",
+      email: "mailto:esc11@fordham.edu",
       linkedin: "https://www.linkedin.com/in/samcleland34/",
       github: "https://github.com/SamCleland034"
     },
