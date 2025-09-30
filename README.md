@@ -2,7 +2,7 @@
 
 A modern, interactive website for the Fordham University Artificial Intelligence Club. Built with Next.js 15, React, TypeScript, and Tailwind CSS, featuring smooth animations and a responsive design.
 
-![Fordham AI Club](public/placeholder.svg?height=400&width=800&query=Fordham%20AI%20Club%20Website%20Banner)
+![Fordham GSB AI Society](public/fgsbais_logo.png)
 
 ## Features
 
