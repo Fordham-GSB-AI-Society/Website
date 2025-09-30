@@ -1,4 +1,4 @@
-# Fordham Artificial Intelligence Club Website
+# Fordham Artificial Intelligence Society Website
 
 A modern, interactive website for the Fordham University Artificial Intelligence Club. Built with Next.js 15, React, TypeScript, and Tailwind CSS, featuring smooth animations and a responsive design.
 
