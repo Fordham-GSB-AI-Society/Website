@@ -41,7 +41,7 @@ npm --version
 
 1. **Clone the repository:**
 \`\`\`bash
-git clone https://github.com/yourusername/fordham-ai-club.git
+git clone https://github.com/yourusername/Fordham-GSB-AI-Society/Website.git
 cd fordham-ai-club
 \`\`\`
 
