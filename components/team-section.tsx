@@ -23,7 +23,7 @@ export function TeamSection() {
     },
     {
       name: "Ipsha Gautam",
-      role: "Vice President of Event and Outreach",
+      role: "Vice President",
       major: "MS AI '26",
       image: "/ipsha.jpg",
       email: "",
@@ -41,7 +41,7 @@ export function TeamSection() {
     },
     {
       name: "Grace A",
-      role: "Vice President of ",
+      role: "Vice President of Event and Outreach",
       major: "MS AI '26",
       image: "/grace.jpg",
       email: "",
