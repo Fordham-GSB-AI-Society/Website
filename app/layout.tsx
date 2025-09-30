@@ -9,7 +9,7 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Fordham GSB AI Society - Artificial Intelligence Community",
   description:
-    "Join the Fordham University Artificial Intelligence Club. Learn, build, and innovate with AI technologies.",
+    "Join the Fordham GSB Artificial Intelligence Society . Learn, build, and innovate with AI technologies.",
   generator: "v0.app",
 }
 
