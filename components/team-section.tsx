@@ -18,7 +18,7 @@ export function TeamSection() {
       major: "FTMBA '26",
       image: "/mainak.jpg",
       email: "",
-      linkedin: "",
+      linkedin: "https://www.linkedin.com/in/mainak-m-panja-66850824/",
       github: ""
     },
     {
