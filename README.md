@@ -203,4 +203,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Made with 💜 by the Fordham AI Club
+Made with 💜 by the Fordham GSB AI Society
