@@ -24,7 +24,7 @@ export function TeamSection() {
     {
       name: "Ipsha Gautam",
       role: "Vice President",
-      major: "MS AI '27",
+      major: "MSAIB '27",
       image: "/ipsha.jpg",
       email: "",
       linkedin: "",
@@ -42,7 +42,7 @@ export function TeamSection() {
     {
       name: "Grace Assogba",
       role: "Vice President of Event and Outreach",
-      major: "MS AI '27",
+      major: "MSAIB '27",
       image: "/grace.jpg",
       email: "",
       linkedin: "",
@@ -62,7 +62,7 @@ export function TeamSection() {
     {
       name: "Nathanael Lara",
       role: "Assistant VP of Tech and Research",
-      major: "MS AI '27",
+      major: "MSAIB '27",
       image: "/nathan.jpg",
       email: "",
       linkedin: "",
