@@ -51,34 +51,36 @@ export function EventsSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
             >
-              <Card className="hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
-                <CardHeader>
+              <Card className="hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full flex flex-col">
+                <CardHeader className="flex-shrink-0">
                   <div className="flex items-center justify-between mb-2">
                     <span className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md font-medium transition-all duration-300 hover:bg-primary/20">
                       {event.type}
                     </span>
                   </div>
-                  <CardTitle className="text-xl text-balance">{event.title}</CardTitle>
+                  <CardTitle className="text-xl text-balance h-16 flex items-center">{event.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 text-pretty">{event.description}</p>
+                <CardContent className="flex flex-col flex-grow">
+                  {event.description && (
+                    <p className="text-muted-foreground mb-4 text-pretty">{event.description}</p>
+                  )}
 
-                  <div className="space-y-2 mb-6">
-                    <div className="flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      {event.date}
+                  <div className="space-y-2 mb-6 flex-grow">
+                    <div className="flex items-start text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground">
+                      <Calendar className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="break-words">{event.date}</span>
                     </div>
-                    <div className="flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground">
-                      <Clock className="h-4 w-4 mr-2" />
-                      {event.time}
+                    <div className="flex items-start text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground">
+                      <Clock className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="break-words">{event.time}</span>
                     </div>
-                    <div className="flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      {event.location}
+                    <div className="flex items-start text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground">
+                      <MapPin className="h-4 w-4 mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="break-words leading-relaxed">{event.location}</span>
                     </div>
                   </div>
 
-                  <Button className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <Button className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg mt-auto">
                     Register Now
                   </Button>
                 </CardContent>
