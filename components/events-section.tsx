@@ -1,3 +1,5 @@
+"use client"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, Clock } from "lucide-react"
@@ -15,16 +17,19 @@ export function EventsSection() {
       time: "8:00 PM - 10:00 PM",
       location: "TBA",
       description: "",
-      type: "Networking Event",
+      type: "Social",
+      link: '/aicebreaker'
     },
+
     {
       title: "Fordham AI Society x Qlaws.ai Hackathon Event",
-      date: "November 15th, 2025",
+      date: "TBA",
       time: "TBA",
       location: "Fordham Lincoln Center - McNally Amphitheater, 140 W 62nd St",
-      description: "",
-      type: "Competition",
-    },
+      description: "Build innovative AI solutions in teams over a weekend-long hackathon.",
+      type: "Hackathon",
+      link: "/hackathon",
+    }
   ]
 
   return (
@@ -78,9 +83,15 @@ export function EventsSection() {
                     </div>
                   </div>
 
-                  <Button className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                    Register Now
-                  </Button>
+                  {event.link ? (
+                    <Button asChild className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                      <a href={event.link}>Learn More</a> 
+                    </Button>
+                  ) : (
+                    <Button className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                      Register Now
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
