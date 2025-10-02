@@ -10,7 +10,7 @@ export function EventsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const events = [
     {
-      title: "Fordham AI Society Icebreaker Event",
+      title: "Fordham AI-cebreaker",
       date: "October 23th, 2025",
       time: "8:00 PM - 10:00 PM",
       location: "TBA",

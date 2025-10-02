@@ -44,7 +44,7 @@ export function AboutSection() {
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">About Our Club</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            The Fordham AI Club is a student-led organization dedicated to advancing artificial intelligence education,
+            The Fordham GSB AI Society is a student-led organization dedicated to advancing artificial intelligence education,
             research, and innovation on campus and beyond.
           </p>
         </motion.div>
