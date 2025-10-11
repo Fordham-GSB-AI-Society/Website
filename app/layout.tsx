@@ -10,7 +10,12 @@ export const metadata: Metadata = {
   title: "Fordham GSB AI Society - Artificial Intelligence Community",
   description:
     "Join the Fordham GSB Artificial Intelligence Society . Learn, build, and innovate with AI technologies.",
-  generator: "v0.app",
+    generator: "v0.app",
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+      ],
+    }
 }
 
 export default function RootLayout({

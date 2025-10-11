@@ -2,6 +2,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Github, Instagram, Linkedin, Mail } from "lucide-react"
 
+const websites = ["gsbais@fordham.edu", 
+  "https://www.instagram.com/fordhamaisociety/", 
+  "https://www.linkedin.com/company/fordham-ai-society/posts/?feedView=all",
+   "https://github.com/Fordham-GSB-AI-Society"]
+
 export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
@@ -17,18 +22,26 @@ export function Footer() {
             Empowering the next generation of AI innovators through education, collaboration, and hands-on experience.
           </p>
           <div className="flex space-x-4">
-            <Button variant="outline" size="icon">
-              <Mail className="h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="icon">
-              <Instagram className="h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="icon">
-              <Linkedin className="h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="icon">
-              <Github className="h-4 w-4" />
-            </Button>
+            <a href={`mailto:${websites[0]}`} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon">
+                <Mail className="h-4 w-4" />
+              </Button>
+            </a>
+            <a href={websites[1]} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon">
+                <Instagram className="h-4 w-4" />
+              </Button>
+            </a>
+            <a href={websites[2]} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon">
+                <Linkedin className="h-4 w-4" />
+              </Button>
+            </a>
+            <a href={websites[3]} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="icon">
+                <Github className="h-4 w-4" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>
