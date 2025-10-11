@@ -34,7 +34,7 @@ export default function AIcebreakerPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance">AIcebreaker Happy Hour</h1>
 
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl text-pretty">
-              Join us for an evening of networking, conversation, and community building at The Blessed Kitchen. Connect
+              Join us for an evening of networking, conversation, and community building. Connect
               with fellow AI enthusiasts in a relaxed, off-campus setting.
             </p>
 
@@ -49,7 +49,7 @@ export default function AIcebreakerPage() {
               </div>
               <div className="flex items-center gap-2 text-lg">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span className="font-medium">The Blessed Kitchen</span>
+                <span className="font-medium">TBA</span>
               </div>
             </div>
 
