@@ -22,7 +22,7 @@ export function EventsSection() {
     },
 
     {
-      title: "Fordham AI Society x Qlaws.ai Hackathon Event",
+      title: "Fordham AI Society x Qlaws.ai Hackathon",
       date: "TBA",
       time: "TBA",
       location: "Fordham Lincoln Center - McNally Amphitheater, 140 W 62nd St",
