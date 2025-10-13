@@ -82,9 +82,9 @@ export function TeamSection() {
       image: "/shawyan.jpg",
       email: "",
       linkedin: "https://www.linkedin.com/in/shawyan-t-36488525b/",
-      github: ""
+      github: "https://github.com/shawyan-t"
       ,
-      bio:""
+      bio:"An MS in Finance candidate at Fordham’s Gabelli School of Business with a computer science background, Shawyan works at the intersection of finance and AI. He builds practical tools for market research and data-driven analysis and has professional experience in software development and testing. As AVP of AI Research & Tech for the Fordham AI Society, he supports the club’s technical programming and resources for the student community."
     },
         {
       name: "Habana Rubio",
