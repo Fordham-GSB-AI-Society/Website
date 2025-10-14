@@ -49,20 +49,13 @@ export default function AIcebreakerPage() {
               </div>
               <div className="flex items-center gap-2 text-lg">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span className="font-medium">TBA</span>
+                <span className="font-medium">Picante, 3424 Broadway, New York, NY 10031</span>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
                 RSVP Now
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="transition-all duration-300 hover:scale-105 bg-transparent"
-              >
-                Add to Calendar
               </Button>
             </div>
           </motion.div>
@@ -79,7 +72,7 @@ export default function AIcebreakerPage() {
             transition={{ duration: 0.6 }}
             className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl"
           >
-            <Image src="/modern-restaurant-interior-with-warm-lighting-and-.jpg" alt="The Blessed Kitchen venue" fill className="object-cover" />
+            <Image src="/picante.png" alt="Picante Venue" fill className="object-cover" />
           </motion.div>
         </div>
       </section>
@@ -98,7 +91,7 @@ export default function AIcebreakerPage() {
                 <Gift className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-4">Special Offer</h2>
                 <p className="text-xl text-muted-foreground mb-2">
-                  <span className="text-2xl font-bold text-primary">First 30 attendees</span> receive
+                  <span className="text-2xl font-bold text-primary">First 20 attendees</span> receive
                 </p>
                 <p className="text-3xl font-bold text-primary mb-4">1 FREE DRINK</p>
                 <p className="text-muted-foreground">Arrive early to claim your complimentary beverage!</p>

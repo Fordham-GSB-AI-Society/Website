@@ -28,35 +28,29 @@ import Link from "next/link"
 export default function HackathonPage() {
   const challenges = [
     {
-      title: "Retrieval",
-      description: "Answer diligence questions from contracts with citations (JSON output)",
+      title: "Track A – Contract Understanding",
+      level: "Beginner/Intermediate",
+      description:
+        "Build an NLP system that identifies and classifies clauses in a contract (e.g., 'Confidentiality,' 'Termination,' 'Indemnity') and summarizes their meaning in plain English.",
+      tools: "spaCy, Transformers (BERT, RoBERTa), OpenAI API, LangChain",
       icon: FileSearch,
     },
     {
-      title: "Drafting",
-      description: "Generate SPA clauses with redlines from LOI documents (DOCX + traceability)",
+      title: "Track B – Contract Reasoning",
+      level: "Intermediate/Advanced",
+      description:
+        "Build an AI assistant that can answer questions about a contract in natural language (e.g., 'When does this agreement end?' 'Who owns the IP?'), using retrieval or structured parsing.",
+      tools: "LlamaIndex, FAISS / ChromaDB, RAG pipelines, GPT-4 or Claude 3",
+      icon: Code,
+    },
+    {
+      title: "Track C – AI Contract Drafting",
+      level: "Advanced",
+      description:
+        "Use generative models to suggest edits, flag risky clauses, or generate missing sections based on prompts like 'make this NDA mutual' or 'add GDPR compliance terms.'",
+      tools: "OpenAI fine-tuning API, prompt chaining, function calling, rule-based post-processing",
       icon: FileEdit,
-    },
-    {
-      title: "Evaluation",
-      description: "Build clause-level evaluator for hallucinations/missing representations (metrics)",
-      icon: CheckCircle,
-    },
-    {
-      title: "UX",
-      description: "Design a one-screen review UI (Figma prototype)",
-      icon: Palette,
-    },
-    {
-      title: "Data",
-      description: "Develop a PII/privilege redactor for legal documents (Python notebook)",
-      icon: Database,
-    },
-    {
-      title: "GTM",
-      description: "Identify pilot firms, workflows, and buying committees (spreadsheet + outreach plan)",
-      icon: TrendingUp,
-    },
+    }
   ]
 
   const scoringCriteria = [
@@ -294,9 +288,13 @@ export default function HackathonPage() {
                       <challenge.icon className="h-6 w-6 text-primary" />
                       <CardTitle className="text-xl">{challenge.title}</CardTitle>
                     </div>
+          
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground text-pretty">{challenge.description}</p>
+                  </CardContent>
+                  <CardContent>                      
+                    <span className="text-muted-foreground text-pretty">Example Tools: {challenge.tools}</span>
                   </CardContent>
                 </Card>
               </motion.div>

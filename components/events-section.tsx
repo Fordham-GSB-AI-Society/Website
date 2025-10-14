@@ -15,7 +15,7 @@ export function EventsSection() {
       title: "Fordham AI-cebreaker",
       date: "October 23th, 2025",
       time: "8:00 PM - 10:00 PM",
-      location: "TBA",
+      location: "Picante, 3424 Broadway, New York, NY 10031",
       description: "",
       type: "Social",
       link: '/aicebreaker'
@@ -69,15 +69,15 @@ export function EventsSection() {
                   <p className="text-muted-foreground mb-4 text-pretty">{event.description}</p>
 
                   <div className="space-y-2 mb-6">
-                    <div className="flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground">
+                    <div className="flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground hover:translate-x-1 cursor-default">
                       <Calendar className="h-4 w-4 mr-2" />
                       {event.date}
                     </div>
-                    <div className="flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground">
+                    <div className="flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground hover:translate-x-1 cursor-default">
                       <Clock className="h-4 w-4 mr-2" />
                       {event.time}
                     </div>
-                    <div className="flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground">
+                    <div className="flex items-center text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground hover:translate-x-1 cursor-default">
                       <MapPin className="h-4 w-4 mr-2" />
                       {event.location}
                     </div>
