@@ -116,7 +116,7 @@ export function TeamSection() {
       email: "",
       linkedin: "https://www.linkedin.com/in/jake-mazie/",
       github: "",
-      bio: ""
+      bio: "Jake Mazie is an MBA candidate at Fordham’s Gabelli School of Business and serves as the Marketing Analytics Lead for the AI Society. Before Fordham, he worked on the Insights & Analytics team at Creative Artists Agency (CAA Sports), advising Fortune 500 clients on sponsorship strategy, consumer insights, and performance measurement. With four years of experience across sports, entertainment, and brand analytics, Jake focuses on turning complex datasets into strategic recommendations that inform business decisions, optimize partnerships, and deliver measurable business results. He is passionate about leveraging AI to advance data-driven strategy, creativity, and innovation."
     },
 
     {
