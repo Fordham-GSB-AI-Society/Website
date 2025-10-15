@@ -49,7 +49,9 @@ export default function AIcebreakerPage() {
               </div>
               <div className="flex items-center gap-2 text-lg">
                 <MapPin className="h-5 w-5 text-primary" />
-                <span className="font-medium">Picante, 3424 Broadway, New York, NY 10031</span>
+                <a href='https://www.google.com/maps/place/Picante/@40.8226308,-73.9526462,15z/data=!4m6!3m5!1s0x89c2f66431f96d8d:0x81bdb7f659f25a4a!8m2!3d40.8227373!4d-73.9528331!16s%2Fg%2F1tjz8wqh?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D'>
+                <span className="font-medium text-red-400">Picante, 3424 Broadway, New York, NY 10031</span>
+                </a>
               </div>
             </div>
 
