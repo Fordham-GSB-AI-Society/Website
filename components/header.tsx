@@ -32,6 +32,9 @@ export function Header() {
             <a href="#team" className="text-muted-foreground hover:text-foreground transition-colors">
               Team
             </a>
+            <a href="/jobs" className="text-muted-foreground hover:text-foreground transition-colors">
+              Jobs
+            </a>
             <a href="https://fordhamgsb.campuslabs.com/engage/organization/ais" target="_blank" rel="noopener noreferrer">
             <Button>Join Club</Button>
             </a>
