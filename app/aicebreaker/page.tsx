@@ -45,7 +45,7 @@ export default function AIcebreakerPage() {
               </div>
               <div className="flex items-center gap-2 text-lg">
                 <Clock className="h-5 w-5 text-primary" />
-                <span className="font-medium">8:00 PM - 10:00 PM</span>
+                <span className="font-medium">6:00 PM - 9:00 PM</span>
               </div>
               <div className="flex items-center gap-2 text-lg">
                 <MapPin className="h-5 w-5 text-primary" />

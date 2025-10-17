@@ -14,7 +14,7 @@ export function EventsSection() {
     {
       title: "Fordham AI-cebreaker",
       date: "October 23th, 2025",
-      time: "8:00 PM - 10:00 PM",
+      time: "6:00 PM - 9:00 PM",
       location: "Picante, 3424 Broadway, New York, NY 10031",
       description: "",
       type: "Social",

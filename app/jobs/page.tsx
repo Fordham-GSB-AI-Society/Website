@@ -59,7 +59,6 @@ export default function JobsPage() {
                         <MapPin className="h-4 w-4 mr-2 text-primary" />
                         <span>{job.location}</span>
                       </div>
-                      <p className="text-muted-foreground mb-4 line-clamp-3">{job.description}</p>
                       <Button asChild variant="default" className="w-full">
                         <a href={job.applyUrl} target="_blank" rel="noopener noreferrer">
                           Apply Now
