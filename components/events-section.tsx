@@ -28,7 +28,7 @@ export function EventsSection() {
       location: "Fordham Lincoln Center - McNally Amphitheater, 140 W 62nd St",
       description: "Build innovative AI solutions in teams over a weekend-long hackathon.",
       type: "Hackathon",
-      link: "/hackathon",
+      link: "",
     }
   ]
 

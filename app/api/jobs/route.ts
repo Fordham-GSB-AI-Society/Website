@@ -67,10 +67,11 @@ export async function GET() {
           if (nextCompany) company = nextCompany;
         }
 
+        company = company == "Build in NYC" ? "" : company,
+        
         jobs.push({
           id: jobs.length + 1,
           title,
-          company,
           description:
             "AI or data/analytics related position appropriate for graduate business students. Sourced from Built In NYC.",
           applyUrl: `https://www.builtinnyc.com${href}`,

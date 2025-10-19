@@ -132,10 +132,6 @@ export default function AIcebreakerPage() {
                     <strong className="text-foreground">Community Building:</strong> Strengthen the Fordham AI community
                     and create lasting friendships with people who share your passion for artificial intelligence.
                   </p>
-                  <p>
-                    <strong className="text-foreground">Food & Drinks:</strong> Enjoy the venue's menu with the first 30
-                    attendees receiving one complimentary drink.
-                  </p>
                 </div>
               </CardContent>
             </Card>
