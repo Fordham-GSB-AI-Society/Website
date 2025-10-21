@@ -65,22 +65,24 @@ export default function AIcebreakerPage() {
       </section>
 
       {/* Venue Image */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py- bg-muted/30">
+        <div className="container mx-auto px-2 sm:px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl"
+            className="relative rounded-xl overflow-hidden shadow-2xl"
+            style={{ height: undefined }} // Remove fixed height for mobile responsiveness
           >
-            <div className="relative w-full h-[300px] sm:h-[400px]">
+            {/* Make the aspect ratio a bit taller to fit the text in the venue image better */}
+            <div className="relative w-full aspect-[16/7] sm:aspect-[16/4]">
               <Image
                 src="/picante.png"
                 alt="Picante Venue"
                 fill
                 className="object-cover"
-                sizes="(max-width: 640px) 100vw, 800px"
+                sizes="100vw"
                 priority
               />
             </div>
