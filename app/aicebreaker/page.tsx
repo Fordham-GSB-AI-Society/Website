@@ -74,7 +74,16 @@ export default function AIcebreakerPage() {
             transition={{ duration: 0.6 }}
             className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl"
           >
-            <Image src="/picante.png" alt="Picante Venue" fill className="object-cover" />
+            <div className="relative w-full h-[300px] sm:h-[400px]">
+              <Image
+                src="/picante.png"
+                alt="Picante Venue"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 800px"
+                priority
+              />
+            </div>
           </motion.div>
         </div>
       </section>
