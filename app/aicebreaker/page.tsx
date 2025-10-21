@@ -41,7 +41,7 @@ export default function AIcebreakerPage() {
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="flex items-center gap-2 text-lg">
                 <Calendar className="h-5 w-5 text-primary" />
-                <span className="font-medium">October 23, 2025</span>
+                <span className="font-medium">November 7th, 2025</span>
               </div>
               <div className="flex items-center gap-2 text-lg">
                 <Clock className="h-5 w-5 text-primary" />
