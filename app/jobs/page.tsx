@@ -46,6 +46,15 @@ export default function JobsPage() {
   return (
     <div className="min-h-screen bg-background">
       <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10 text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex justify-start">
+        <Button asChild variant="outline" className="flex items-center gap-2">
+          <a href="/">
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Home
+          </a>
+        </Button>
+      </div>
+
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-[#800000]">AI & Business Jobs</h1>
           <p className="text-lg text-muted-foreground mb-8">
@@ -53,6 +62,7 @@ export default function JobsPage() {
           </p>
         </motion.div>
       </section>
+
 
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
