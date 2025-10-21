@@ -89,7 +89,7 @@ export function TeamSection() {
         {
       name: "Habana Rubio",
       role: "Assistant VP of Event and Outreach",
-      major: "MS Msarketing Intelligence '27",
+      major: "MS Marketing Intelligence '27",
       image: "/habana.jpg",
       email: "",
       linkedin: "https://www.linkedin.com/in/habana-rubio/",
