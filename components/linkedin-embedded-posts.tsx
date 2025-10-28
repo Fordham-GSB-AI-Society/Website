@@ -8,26 +8,21 @@ import { useInView } from "framer-motion"
 import { useRef, useEffect } from "react"
 
 interface EmbeddedPost {
-  url: string
+  urn: string
   title: string
   description: string
 }
 
 const EMBEDDED_POSTS: EmbeddedPost[] = [
   {
-    url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7150000000000000000",
-    title: "AI Hackathon Announcement",
-    description: "Join us for our upcoming AI Hackathon with QLaws.ai",
+    urn: "urn:li:share:7386163387128475648",
+    title: "AI Jobs Newsletter October 20-26",
+    description: "",
   },
   {
-    url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7149000000000000000",
-    title: "Conference Presentation",
-    description: "Our members presented at the Northeast AI Conference",
-  },
-  {
-    url: "https://www.linkedin.com/embed/feed/update/urn:li:share:7148000000000000000",
-    title: "AIcebreaker Event",
-    description: "Monthly networking happy hour at The Blessed Kitchen",
+    urn: "urn:li:share:7384343596600188929",
+    title: "AI Newsletter October 13-20",
+    description: "",
   },
 ]
 
@@ -80,16 +75,15 @@ export function LinkedinEmbeddedPosts() {
             >
               <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full flex flex-col">
                 <CardContent className="p-0 flex-1 flex flex-col">
-                  {/* LinkedIn Embedded Post */}
-                  <div className="w-full min-h-[400px] flex items-center justify-center bg-background">
+                  <div className="w-full flex items-center justify-center bg-background p-4">
                     <iframe
-                      src={post.url}
-                      height="400"
-                      width="100%"
+                      src={`https://www.linkedin.com/embed/feed/update/${post.urn}?collapsed=1`}
+                      height="668"
+                      width="504"
                       frameBorder="0"
                       allowFullScreen
-                      title={post.title}
-                      className="w-full"
+                      title="Embedded post"
+                      className="max-w-full"
                     />
                   </div>
 
@@ -103,7 +97,11 @@ export function LinkedinEmbeddedPosts() {
                       size="sm"
                       className="w-full transition-all duration-300 hover:scale-105 hover:shadow-md hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] bg-transparent"
                     >
-                      <a href={post.url.replace("/embed/", "/")} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={`https://www.linkedin.com/feed/update/${post.urn}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="h-4 w-4 mr-2" />
                         View on LinkedIn
                       </a>

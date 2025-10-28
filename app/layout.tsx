@@ -7,15 +7,26 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Fordham GSB AI Society - Artificial Intelligence Community",
-  description:
-    "Join the Fordham GSB Artificial Intelligence Society . Learn, build, and innovate with AI technologies.",
-    generator: "v0.app",
-    icons: {
-      icon: [
-        { url: "/favicon.ico", sizes: "any" },
-      ],
-    }
+  title: 'Fordham GSB AI Society - Artificial Intelligence Community',
+  description: 'The Fordham GSB AI Society is a student-led organization dedicated to advancing artificial intelligence education, research, and innovation on campus and beyond',
+  openGraph: {
+    title: 'Fordham GSB AI Society - Artificial Intelligence Community',
+    description: 'The Fordham GSB AI Society is a student-led organization dedicated to advancing artificial intelligence education, research, and innovation on campus and beyond',
+    images: [
+      {
+        url: '/fgsbais_logo.png', // Your image URL
+        alt: 'Fordham GSB AI Society',
+      }
+    ],
+    url: 'https://www.fordhamgsb-ais.org',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fordham GSB AI Society - Artificial Intelligence Community',
+    description: 'The Fordham GSB AI Society is a student-led organization dedicated to advancing artificial intelligence education, research, and innovation on campus and beyond',
+    images: ['/fgsbais_logo.png'],
+  },
 }
 
 export default function RootLayout({
