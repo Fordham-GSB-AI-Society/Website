@@ -49,8 +49,8 @@ export default function AIcebreakerPage() {
               </div>
               <div className="flex items-center gap-2 text-lg">
                 <MapPin className="h-5 w-5 text-primary" />
-                <a href='https://www.google.com/maps/place/Picante/@40.8226308,-73.9526462,15z/data=!4m6!3m5!1s0x89c2f66431f96d8d:0x81bdb7f659f25a4a!8m2!3d40.8227373!4d-73.9528331!16s%2Fg%2F1tjz8wqh?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D'>
-                <span className="font-medium text-red-400">Picante, 3424 Broadway, New York, NY 10031</span>
+                <a href='https://www.google.com/maps?sca_esv=c2292d1d59604bd8&rlz=1C1ONGR_enUS1136US1137&output=search&q=morty%27s+wine+and+beer+bar&source=lnms&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZMLQ4RPdPjLPmOakFCN7X8CDeRd7MSf3QLuh-Ogt4OB5y4-wxjrYUFy9kPDMzOULSJXtCtj8tIUFEB-lp8L4Z7j1cnDEVnSWsPt__cnAmlUDyyiMXYUH0rYkbV-XzKCl8Ec1bpqAuI8GVV2qOpAKw2qtBnmom6nUIOg7FABrH08DwtKVIOkWS7RQ2JcKic-GuKHfW5g&entry=mc&ved=1t:200715&ictx=111'>
+                <span className="font-medium text-red-400">Morty's Wine and Beer Bar, 15 West End Ave, New York, NY 10023</span>
                 </a>
               </div>
             </div>
@@ -76,13 +76,13 @@ export default function AIcebreakerPage() {
             style={{ height: undefined }} // Remove fixed height for mobile responsiveness
           >
             {/* Make the aspect ratio a bit taller to fit the text in the venue image better */}
-            <div className="relative w-full aspect-[16/7] sm:aspect-[16/4]">
+            <div className="relative w-full" style={{ aspectRatio: "1", maxWidth: 700, margin: "0 auto", minHeight: 600 }}>
               <Image
-                src="/picante.png"
-                alt="Picante Venue"
+                src="/morty's.jpg"
+                alt="Morty's Venue"
                 fill
-                className="object-cover"
-                sizes="100vw"
+                className="object-cover rounded-lg"
+                sizes="(min-width: 500px) 350px, 80vw"
                 priority
               />
             </div>
@@ -104,7 +104,7 @@ export default function AIcebreakerPage() {
                 <Gift className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-4">Special Offer</h2>
                 <p className="text-xl text-muted-foreground mb-2">
-                  <span className="text-2xl font-bold text-primary">First 20 attendees</span> receive
+                  <span className="text-2xl font-bold text-primary">First 25 attendees</span> receive
                 </p>
                 <p className="text-3xl font-bold text-primary mb-4">1 FREE DRINK</p>
                 <p className="text-muted-foreground">Arrive early to claim your complimentary beverage!</p>

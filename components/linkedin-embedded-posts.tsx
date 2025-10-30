@@ -78,8 +78,8 @@ export function LinkedinEmbeddedPosts() {
                   <div className="w-full flex items-center justify-center bg-background p-4">
                     <iframe
                       src={`https://www.linkedin.com/embed/feed/update/${post.urn}?collapsed=1`}
-                      height="668"
-                      width="504"
+                      height="850"
+                      width="600"
                       frameBorder="0"
                       allowFullScreen
                       title="Embedded post"

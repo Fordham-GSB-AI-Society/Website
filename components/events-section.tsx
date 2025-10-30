@@ -12,13 +12,13 @@ export function EventsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const events = [
     {
-      title: "Fordham AI-cebreaker",
+      title: "Fordham AI-cebreaker Happy Hour",
       date: "November 7th, 2025",
       time: "6:00 PM - 9:00 PM",
-      location: "TBA",
+      location: "Morty's Wine and Beer Bar",
       description: "",
       type: "Social",
-      link: ''
+      link: '/aicebreaker'
     },
 
     {
@@ -89,7 +89,7 @@ export function EventsSection() {
                     </Button>
                   ) : (
                     <Button className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                      Register Now
+                      In Development
                     </Button>
                   )}
                 </CardContent>
