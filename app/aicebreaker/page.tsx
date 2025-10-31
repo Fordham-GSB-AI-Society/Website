@@ -37,7 +37,7 @@ export default function AIcebreakerPage() {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance">AIcebreaker Happy Hour</h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-balance">CTRL + ALT + MEET</h1>
 
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl text-pretty">
               Join us for an evening of networking, conversation, and community building. Connect
