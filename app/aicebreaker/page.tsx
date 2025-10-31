@@ -104,16 +104,25 @@ export default function AIcebreakerPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="relative rounded-xl overflow-hidden shadow-2xl"
-            style={{ height: undefined }} // Remove fixed height for mobile responsiveness
+            style={{ height: undefined }}
           >
-            {/* Make the aspect ratio a bit taller to fit the text in the venue image better */}
-            <div className="relative w-full" style={{ aspectRatio: "1", maxWidth: 700, margin: "0 auto", minHeight: 800 }}>
+            {/* Responsive aspect ratio; on mobile: taller, on desktop: less tall */}
+            <div
+              className="relative w-full"
+              style={{
+                aspectRatio: "1 / 1.2",               // Default is tall square
+                maxWidth: 700,
+                margin: "0 auto",
+                width: "100%",
+                minHeight: "300px",                    // Minimum for tiny phones
+              }}
+            >
               <Image
-                src="/Fordham AI Society Happy Hour.png"
+                src="/ctrlaltmeetmain.jpg"
                 alt="Morty's Venue"
                 fill
                 className="object-cover rounded-lg"
-                sizes="(min-width: 600px) 650px, 100vw"
+                sizes="(max-width: 767px) 96vw, (min-width: 768px) 650px"
                 priority
               />
             </div>
