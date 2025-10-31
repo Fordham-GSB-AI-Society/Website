@@ -17,6 +17,7 @@ export function EventsSection() {
       time: "6:00 PM - 9:00 PM",
       location: "Morty's Wine and Beer Bar",
       description: "",
+      image: "/Fordham AI Society Happy Hour.png",
       type: "Social",
       link: '/aicebreaker'
     },
@@ -27,6 +28,7 @@ export function EventsSection() {
       time: "TBA",
       location: "Fordham Lincoln Center - McNally Amphitheater, 140 W 62nd St",
       description: "Build innovative AI solutions in teams over a weekend-long hackathon.",
+      image: "",
       type: "Hackathon",
       link: "",
     }
@@ -66,6 +68,18 @@ export function EventsSection() {
                   <CardTitle className="text-xl text-balance">{event.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
+                  {event.image && (
+                    <div className="w-full mb-4 flex justify-center">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="rounded-lg max-h-100 object-cover w-full"
+                        style={{ maxWidth: 350 }}
+                      />
+                    </div>
+                  )}
+
                   <p className="text-muted-foreground mb-4 text-pretty">{event.description}</p>
 
                   <div className="space-y-2 mb-6">

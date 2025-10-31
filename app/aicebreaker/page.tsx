@@ -19,7 +19,13 @@ export default function AIcebreakerPage() {
             transition={{ duration: 0.6 }}
             className="flex flex-col items-center text-center"
           >
-            <Link href="/#events" className="inline-flex items-center text-primary hover:underline mb-6">
+            <Link
+              href="/#events"
+              className="inline-flex items-center text-primary hover:underline mb-6 font-semibold bg-white/85 rounded-md px-4 py-2 shadow transition"
+              style={{
+                backgroundColor: 'rgba(100, 26, 26, 0.97)',
+              }}
+            >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Events
             </Link>
@@ -56,9 +62,34 @@ export default function AIcebreakerPage() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                RSVP Now
-              </Button>
+            <Button
+              asChild
+              size="lg"
+              className="transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              style={{
+                backgroundColor: '#FBBC05',
+                borderColor: '#FBBC05',
+                color: 'black'
+              }}
+            >
+              <a href="https://forms.gle/fMCw1rSZxknhvfb9A" target="_blank" rel="noopener noreferrer">
+                RSVP (Google Form)
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              style={{
+                backgroundColor: '#53ADD2',
+                borderColor: '#53ADD2',
+                color: 'white'
+              }}
+            >
+              <a href="https://luma.com/xixfyewl" target="_blank" rel="noopener noreferrer">
+                RSVP (Luma)
+              </a>
+            </Button>
             </div>
           </motion.div>
         </div>
@@ -76,13 +107,13 @@ export default function AIcebreakerPage() {
             style={{ height: undefined }} // Remove fixed height for mobile responsiveness
           >
             {/* Make the aspect ratio a bit taller to fit the text in the venue image better */}
-            <div className="relative w-full" style={{ aspectRatio: "1", maxWidth: 700, margin: "0 auto", minHeight: 600 }}>
+            <div className="relative w-full" style={{ aspectRatio: "1", maxWidth: 700, margin: "0 auto", minHeight: 800 }}>
               <Image
-                src="/morty's.jpg"
+                src="/Fordham AI Society Happy Hour.png"
                 alt="Morty's Venue"
                 fill
                 className="object-cover rounded-lg"
-                sizes="(min-width: 500px) 350px, 80vw"
+                sizes="(min-width: 600px) 650px, 100vw"
                 priority
               />
             </div>
@@ -104,7 +135,7 @@ export default function AIcebreakerPage() {
                 <Gift className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold mb-4">Special Offer</h2>
                 <p className="text-xl text-muted-foreground mb-2">
-                  <span className="text-2xl font-bold text-primary">First 25 attendees</span> receive
+                  <span className="text-2xl font-bold text-primary">First 20 attendees</span> receive
                 </p>
                 <p className="text-3xl font-bold text-primary mb-4">1 FREE DRINK</p>
                 <p className="text-muted-foreground">Arrive early to claim your complimentary beverage!</p>
