@@ -10,10 +10,10 @@ import { useRef } from "react"
 export function EventsSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const events = [
+  let events = [
     {
       title: "CTRL + ALT + MEET",
-      date: "November 7th, 2025",
+      date: "November ",
       time: "6:00 PM - 9:00 PM",
       location: "Morty's Wine and Beer Bar",
       description: "",
@@ -34,6 +34,8 @@ export function EventsSection() {
     }
   ]
 
+  events = []
+  
   return (
     <section id="events" className="py-24 bg-muted/30" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
