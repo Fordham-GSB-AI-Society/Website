@@ -16,8 +16,8 @@ interface EmbeddedPost {
 const EMBEDDED_POSTS: EmbeddedPost[] = [
 
   {
-    urn: "urn:li:share:7390455329731424256",
-    title: "CTRL + ALT + MEET Annoucement",
+    urn: "urn:li:share:7392730789018427392",
+    title: "AI Newsletter October 27-November 2",
     description: "",
   },
 
