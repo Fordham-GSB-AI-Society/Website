@@ -1,0 +1,14 @@
+{
+    "functions": {
+      "functions/**/*.py": {
+        "runtime": "python3.11"
+      }
+    },
+    "rewrites": [
+      {
+        "source": "/api/crypto-sentiment-pyth",
+        "destination": "/functions/crypto-sentiment-pyth/api.py"
+      }
+    ]
+  }
+  
