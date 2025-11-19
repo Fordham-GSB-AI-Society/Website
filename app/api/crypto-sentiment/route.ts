@@ -35,3 +35,61 @@ const FALLBACK_DATA = [
   }
 ];
 
+export const GET = async () => {
+  try {
+    const result = await executePythonScript();
+    return NextResponse.json(result);
+  } catch (error) {
+    console.error('API error:', error);
+    return NextResponse.json(FALLBACK_DATA, { status: 200 });
+  }
+};
+
+async function executePythonScript(): Promise<any[]> {
+  return new Promise((resolve) => {
+    console.log('Spawning Python script:', PYTHON_SCRIPT);
+
+    // THIS LINE FIXES VERCEL
+    const pythonCmd = process.env.VERCEL ? 'python3' : 'python';
+
+    const python = spawn(pythonCmd, [PYTHON_SCRIPT], {
+      cwd: process.cwd(),
+      timeout: TIMEOUT_MS,
+    });
+
+    let data = '';
+    let error = '';
+
+    const timeout = setTimeout(() => {
+      python.kill();
+      resolve(FALLBACK_DATA);
+    }, TIMEOUT_MS);
+
+    python.stdout.on('data', (chunk) => data += chunk.toString());
+    python.stderr.on('data', (chunk) => error += chunk.toString());
+
+    python.on('close', (code) => {
+      clearTimeout(timeout);
+      if (code === 0 && data.trim()) {
+        try {
+          const parsed = JSON.parse(data.trim());
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            resolve(parsed);
+            return;
+          }
+        } catch (e) { /* fall through */ }
+      }
+      console.error('Python failed:', { code, error });
+      resolve(FALLBACK_DATA);
+    });
+
+    python.on('error', (err) => {
+      console.error('Spawn error:', err);
+      clearTimeout(timeout);
+      resolve(FALLBACK_DATA);
+    });
+  });
+}
+
+export const dynamic = 'force-dynamic';
+export const maxDuration = 60;
