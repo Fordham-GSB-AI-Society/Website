@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "python/**/*.py",
+        "use": "@vercel/python"
+      },
+      {
+        "src": "app/**",
+        "use": "@vercel/next"
+      }
+    ],
+    "installCommand": "npm run python:setup",
+    "buildCommand": "npm run build"
+  }

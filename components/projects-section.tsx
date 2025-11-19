@@ -12,24 +12,17 @@ export function ProjectsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const projects = [
+
     {
-      title: "AI Chatbot Assistant",
-      description: "A conversational AI built with natural language processing to help students with academic queries.",
-      tech: ["Python", "TensorFlow", "React"],
-      image: "/ai-chatbot-interface.png",
-    },
-    {
-      title: "Computer Vision Lab",
-      description: "Image recognition and classification system for campus security and accessibility features.",
-      tech: ["OpenCV", "PyTorch", "Flask"],
-      image: "/computer-vision-dashboard.jpg",
-    },
-    {
-      title: "Predictive Analytics",
-      description: "Machine learning models to predict student performance and recommend personalized learning paths.",
-      tech: ["Scikit-learn", "Pandas", "Jupyter"],
-      image: "/data-analytics-dashboard.png",
-    },
+      title: "Crypto Sentiment Analyzer",
+      description:
+        "AI-powered real-time analysis predicting bullish/bearish trends for popular cryptocurrencies using sentiment analysis, technical indicators, and news aggregation.",
+      tech: ["Python", "Reddit API", "SKLearn", "CoinGecko API"],
+      image: "/crypto-dashboard.png",
+      github: "https://github.com/fordham-ai/crypto-sentiment",
+      demo: "/projects/crypto-sentiment",
+      isInternal: true,
+    }
   ]
 
   return (
@@ -84,17 +77,27 @@ export function ProjectsSection() {
                       variant="outline"
                       size="sm"
                       className="transition-all duration-300 hover:scale-105 hover:shadow-md bg-transparent"
+                      asChild
                     >
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-2" />
+                        Code
+                      </a>
                     </Button>
                     <Button
                       variant="outline"
                       size="sm"
                       className="transition-all duration-300 hover:scale-105 hover:shadow-md bg-transparent"
+                      asChild
                     >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Demo
+                      <a
+                        href={project.demo}
+                        target={project.isInternal ? "_self" : "_blank"}
+                        rel={project.isInternal ? undefined : "noopener noreferrer"}
+                      >
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        {project.isInternal ? "View Project" : "Demo"}
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
