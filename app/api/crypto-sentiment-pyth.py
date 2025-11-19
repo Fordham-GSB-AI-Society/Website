@@ -27,4 +27,4 @@ def handler(request):
         }
 
     except Exception as e:
-        return { "statusCode": 200, "body": "[]" }
+        return { "statusCode": 404, "body": "[]" }
