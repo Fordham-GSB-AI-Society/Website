@@ -6,10 +6,8 @@ export const runtime = "nodejs";
 
 export async function GET() {
   try {
-    // Detect if running locally
-    const isLocal =
-      !process.env.VERCEL_URL &&
-      (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "local");
+    // Detect LOCAL development environment
+    const isLocal = process.env.NODE_ENV === "development" && !process.env.VERCEL_URL;
 
     if (isLocal) {
       // 🟩 LOCAL MODE — run Python directly
@@ -44,8 +42,11 @@ export async function GET() {
       cache: "no-store",
     });
 
-    const parsed = await res.json();
+    if (!res.ok) {
+      throw new Error(`Python API error: ${res.status}`);
+    }
 
+    const parsed = await res.json();
     return NextResponse.json(parsed);
 
   } catch (err) {
