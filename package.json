@@ -12,7 +12,7 @@
   "python:live": "python scripts/crypto_sentiment_analysis.py",
 
   "build": "next build",
-  "build:local": "npm run python:setup && npm run python:train && npm run build"
+  "build:local": "npm run python:setup && npm run python:train && next build"
 },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
