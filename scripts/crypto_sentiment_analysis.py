@@ -65,7 +65,6 @@ def load_cache() -> list | None:
         data = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
         cached_time = datetime.fromisoformat(data["timestamp"])
         if datetime.now(UTC) - cached_time < timedelta(seconds=CACHE_TTL_SECONDS):
-            print("Cache hit - returning cached results", file=sys.stderr)
             return data["results"]
     except Exception as e:
         print(f"Cache corrupted or unreadable: {e}", file=sys.stderr)
@@ -120,7 +119,6 @@ def fetch_reddit_comments(symbol: str, name: str, limit: int = 20) -> List[str]:
     subreddits_to_search = "cryptocurrency+bitcoin+ethtrader+solana+cardano+ripple"
     comments = []
     try:
-        print(f"Searching Reddit for '{query}'...", file=sys.stderr)
         submissions = reddit.subreddit(subreddits_to_search).search(query, sort="new", time_filter="week", limit=10)
         for submission in submissions:
             if submission.score < 3:
@@ -133,7 +131,7 @@ def fetch_reddit_comments(symbol: str, name: str, limit: int = 20) -> List[str]:
                     break
             if len(comments) >= limit:
                 break
-        print(f"Fetched {len(comments)} Reddit comments for {symbol}.", file=sys.stderr)
+
         if not comments:
             return [f"No recent high-quality discussion found for {name}."]
         return comments
@@ -191,8 +189,6 @@ def main():
     if cached_results is not None:
         print(json.dumps(cached_results))
         return
-
-    print("No valid cache - fetching fresh data...", file=sys.stderr)
 
     results = []
     price_data = fetch_price_data()
