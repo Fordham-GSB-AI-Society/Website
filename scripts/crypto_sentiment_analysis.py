@@ -67,7 +67,7 @@ def load_cache() -> list | None:
         if datetime.now(UTC) - cached_time < timedelta(seconds=CACHE_TTL_SECONDS):
             return data["results"]
     except Exception as e:
-        print(f"Cache corrupted or unreadable: {e}", file=sys.stderr)
+        pass
     return None
 
 def save_cache(results: list) -> None:
@@ -81,7 +81,7 @@ def save_cache(results: list) -> None:
             encoding="utf-8"
         )
     except Exception as e:
-        print(f"Failed to write cache: {e}", file=sys.stderr)
+        pass
 
 # --- Rest of your functions unchanged ---
 def predict_sentiment(text: str) -> dict:
@@ -111,7 +111,6 @@ def fetch_price_data() -> Dict[str, Dict]:
         res.raise_for_status()
         return res.json()
     except Exception as e:
-        print(json.dumps([{"error": "Price API failed", "details": str(e)}]), file=sys.stderr)
         return {}
 
 def fetch_reddit_comments(symbol: str, name: str, limit: int = 20) -> List[str]:
@@ -136,7 +135,6 @@ def fetch_reddit_comments(symbol: str, name: str, limit: int = 20) -> List[str]:
             return [f"No recent high-quality discussion found for {name}."]
         return comments
     except Exception as e:
-        print(f"Reddit API fetch error ({symbol}): {e}", file=sys.stderr)
         return [f"Discussion about {name} (${symbol}) is ongoing."]
 
 def aggregate_sentiment(texts: List[str]) -> Dict:
