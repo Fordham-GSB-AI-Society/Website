@@ -4,5 +4,10 @@
       "src": "/api/crypto-sentiment",
       "dest": "/app/api/crypto-sentiment/route.py"
     }
-  ]
+  ],
+  "functions": {
+    "app/api/crypto-sentiment/route.py": {
+      "runtime": "python3.11"
+    }
+  }
 }
