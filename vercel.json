@@ -1,10 +1,4 @@
 {
-  "functions": {
-    "app/api/crypto-sentiment/route.py": {
-      "runtime": "python311",
-      "memory": 1024
-    }
-  },
   "routes": [
     {
       "src": "/api/crypto-sentiment",
