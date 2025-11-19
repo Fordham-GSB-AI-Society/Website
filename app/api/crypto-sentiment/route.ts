@@ -41,6 +41,7 @@ export async function GET() {
       ? `https://${process.env.VERCEL_URL}`
       : "http://localhost:3000";
 
+    console.log(`${baseUrl}`)
     const res = await fetch(`${baseUrl}/app/api/crypto-sentiment-pyth`, {
       cache: "no-store",
     });
@@ -97,6 +98,6 @@ export async function GET() {
       },
     ];
 
-    return NextResponse.json(MOCK_DATA, { status: 200 });
+    return NextResponse.json(MOCK_DATA, { status: 404});
   }
 }
