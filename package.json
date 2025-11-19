@@ -2,15 +2,18 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "lint": "next lint",
-    "start": "next start",
-    "python:setup": "python scripts/setup.py",
-    "python:train": "python scripts/crypto_sentiment_analysis_model.py",
-    "python:live": "python scripts/crypto_sentiment_analysis.py",
-    "build": "npm run python:setup && npm run python:train && next build"
-  },
+"scripts": {
+  "dev": "next dev",
+  "lint": "next lint",
+  "start": "next start",
+
+  "python:setup": "python scripts/setup.py",
+  "python:train": "python scripts/crypto_sentiment_analysis_model.py",
+  "python:live": "python scripts/crypto_sentiment_analysis.py",
+
+  "build": "next build",
+  "build:local": "npm run python:setup && npm run python:train && npm run build"
+},
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "1.2.2",
