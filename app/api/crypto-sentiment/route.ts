@@ -41,7 +41,7 @@ export async function GET() {
       ? `https://${process.env.VERCEL_URL}`
       : "http://localhost:3000";
 
-    const res = await fetch(`${baseUrl}/api/crypto-sentiment-pyth`, {
+    const res = await fetch(`${baseUrl}/app/api/crypto-sentiment-pyth`, {
       cache: "no-store",
     });
 
