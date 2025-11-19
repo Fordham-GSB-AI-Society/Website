@@ -1,26 +1,55 @@
-export const runtime = "nodejs"; // Ensure not edge runtime
+import { NextResponse } from "next/server";
+import { execFile } from "child_process";
+import path from "path";
+
+export const runtime = "nodejs";
 
 export async function GET() {
   try {
-    // Build absolute URL inside Vercel
-    const baseUrl =
-      process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : "http://localhost:3000";
+    // Detect if running locally
+    const isLocal =
+      !process.env.VERCEL_URL &&
+      (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "local");
 
+    if (isLocal) {
+      // 🟩 LOCAL MODE — run Python directly
+      const script = path.join(process.cwd(), "scripts", "crypto_sentiment_analysis.py");
+
+      const data = await new Promise<string>((resolve, reject) => {
+        execFile("python3", [script], (err, stdout) => {
+          if (err) reject(err);
+          else resolve(stdout);
+        });
+      });
+
+      const parsed = JSON.parse(data);
+
+      const formatted = parsed.map((item: any) => ({
+        name: item.name || item.coin || "Unknown",
+        symbol: item.symbol ?? "",
+        price: String(item.price ?? "N/A"),
+        change: String(item.change_24h ?? item.change ?? "N/A"),
+        sentiment: item.sentiment ?? "Neutral",
+        confidence: Number(item.confidence ?? 50),
+        signals: item.signals ?? {},
+        prediction: item.prediction ?? "",
+      }));
+
+      return NextResponse.json(formatted);
+    }
+
+    // 🟦 VERCEL MODE — call Python serverless function
+    const baseUrl = `https://${process.env.VERCEL_URL}`;
     const res = await fetch(`${baseUrl}/api/crypto-sentiment`, {
       cache: "no-store",
     });
 
-    if (!res.ok) {
-      throw new Error(`Python API error: ${res.status}`);
-    }
+    const parsed = await res.json();
 
-    const data = await res.json();
-    return Response.json(data);
+    return NextResponse.json(parsed);
 
-  } catch (err: any) {
-    console.error("Error calling Python API:", err);
-    return Response.json([], { status: 200 });
+  } catch (err) {
+    console.error("API ERROR:", err);
+    return NextResponse.json([], { status: 200 });
   }
 }
