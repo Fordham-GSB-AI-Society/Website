@@ -38,7 +38,7 @@ export async function GET() {
 
     // 🟦 VERCEL MODE — call Python serverless function
     const baseUrl = `https://${process.env.VERCEL_URL}`;
-    const res = await fetch(`${baseUrl}/api/crypto-sentiment`, {
+    const res = await fetch(`${baseUrl}/api/crypto-sentiment-pyth`, {
       cache: "no-store",
     });
 
