@@ -4,25 +4,52 @@ import path from "path";
 
 export const runtime = "nodejs";
 
+// Helper to run Python script and parse JSON
+const runPythonScript = async (scriptPath: string) => {
+  return new Promise<any[]>((resolve, reject) => {
+    execFile("python3", [scriptPath], (err, stdout, stderr) => {
+      if (err) {
+        console.error("Python execution error:", err, stderr);
+        return reject(err);
+      }
+      try {
+        const parsed = JSON.parse(stdout);
+        resolve(parsed);
+      } catch (parseErr) {
+        reject(parseErr);
+      }
+    });
+  });
+};
+
 export async function GET() {
   try {
-    // Detect LOCAL development environment
     const isLocal = process.env.NODE_ENV === "development" && !process.env.VERCEL_URL;
 
     if (isLocal) {
-      // 🟩 LOCAL MODE — run Python directly
-      const script = path.join(process.cwd(), "scripts", "crypto_sentiment_analysis.py");
+      // 🟩 LOCAL DEVELOPMENT — run Python script directly
+      const localScriptPath = path.join(process.cwd(), "scripts/crypto_sentiment_analysis.py");
+      const data = await runPythonScript(localScriptPath);
 
-      const data = await new Promise<string>((resolve, reject) => {
-        execFile("python3", [script], (err, stdout) => {
-          if (err) reject(err);
-          else resolve(stdout);
-        });
-      });
+      const formatted = data.map((item: any) => ({
+        name: item.name || item.coin || "Unknown",
+        symbol: item.symbol ?? "",
+        price: String(item.price ?? "N/A"),
+        change: String(item.change_24h ?? item.change ?? "N/A"),
+        sentiment: item.sentiment ?? "Neutral",
+        confidence: Number(item.confidence ?? 50),
+        signals: item.signals ?? {},
+        prediction: item.prediction ?? "",
+      }));
 
-      const parsed = JSON.parse(data);
+      return NextResponse.json(formatted);
+    } else {
+      // 🟦 PRODUCTION / VERCEL — run Python script inside serverless environment
+      // Relative path to script inside deployment
+      const prodScriptPath = path.join(__dirname, "../../../scripts/crypto_sentiment_analysis.py");
+      const data = await runPythonScript(prodScriptPath);
 
-      const formatted = parsed.map((item: any) => ({
+      const formatted = data.map((item: any) => ({
         name: item.name || item.coin || "Unknown",
         symbol: item.symbol ?? "",
         price: String(item.price ?? "N/A"),
@@ -35,22 +62,8 @@ export async function GET() {
 
       return NextResponse.json(formatted);
     }
-
-    // 🟦 VERCEL MODE — call Python serverless function
-    const baseUrl = `https://${process.env.VERCEL_URL}`;
-    const res = await fetch(`${baseUrl}/api/crypto-sentiment-pyth`, {
-      cache: "no-store",
-    });
-
-    if (!res.ok) {
-      throw new Error(`Python API error: ${res.status}`);
-    }
-
-    const parsed = await res.json();
-    return NextResponse.json(parsed);
-
   } catch (err) {
     console.error("API ERROR:", err);
-    return NextResponse.json([], { status: 200 });
+    return NextResponse.json([], { status: 500 });
   }
 }
