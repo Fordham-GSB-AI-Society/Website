@@ -1,4 +1,4 @@
-{"version": 2,
+{
   "functions": {
     "app/api/crypto-sentiment/route.py": {
       "runtime": "python311",
