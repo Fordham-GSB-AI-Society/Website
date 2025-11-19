@@ -29,3 +29,29 @@ next-env.d.ts
 
 content/
 public/morty's2.jpg
+
+# Python
+.venv
+venv/
+env/
+ENV/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Cache & runtime
+cache/
+*.joblib.cache
+
+# Local env files
+.env
+.env.local
+.env.production
+
+# Vercel / Node build artifacts
+.vercel
+.node_storage
