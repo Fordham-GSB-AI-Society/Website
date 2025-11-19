@@ -1,13 +1,9 @@
+// vercel.json
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
+  "version": 2,
   "functions": {
     "app/api/crypto-sentiment/route.py": {
-      "runtime": "python3.11",
+      "runtime": "python311",
       "memory": 1024
     }
   },
