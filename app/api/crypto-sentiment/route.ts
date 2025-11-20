@@ -46,6 +46,7 @@ export async function GET() {
       cache: "no-store",
     });
 
+    console.log(res)
     if (!res.ok) throw new Error(`Python API error: ${res.status}`);
 
     const parsed = await res.json();
