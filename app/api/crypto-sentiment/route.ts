@@ -43,7 +43,7 @@ export async function GET() {
       : "http://localhost:3000";
 
     console.log(`${baseUrl}`)
-    const res = await fetch(`${baseUrl}/api/crypto-sentiment-pyth`, {
+    const res = await fetch(`${baseUrl}/api/crypto-sentiment`, {
       cache: "no-store",
     });
 
