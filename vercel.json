@@ -1,8 +1,8 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "package.json", "use": "vercel-build" }
-    ],
-    "routes": []
+    "functions": {
+      "api/crypto-sentiment-pyth.py": {
+        "runtime": "python3.12"
+      }
+    }
   }
   
