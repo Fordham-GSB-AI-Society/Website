@@ -12,30 +12,17 @@ export function EventsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   let events = [
     {
-      title: "CTRL + ALT + MEET",
-      date: "November ",
-      time: "6:00 PM - 9:00 PM",
-      location: "Morty's Wine and Beer Bar",
+      title: "Learn How to Predict Sports Games Results Workshop!",
+      date: "February 12th, 2026",
+      time: "1:00pm - 2:30pm",
+      location: "Room 333, Fordham Lincoln Center",
       description: "",
-      image: "/Fordham AI Society Happy Hour.png",
-      type: "Social",
-      link: '/aicebreaker'
-    },
+      image: "/workshop event.png",
+      type: "Workshop",
+      link: '/workshop'
+    }]
 
-    {
-      title: "Fordham AI Society x Qlaws.ai Hackathon",
-      date: "TBA",
-      time: "TBA",
-      location: "Fordham Lincoln Center - McNally Amphitheater, 140 W 62nd St",
-      description: "Build innovative AI solutions in teams over a weekend-long hackathon.",
-      image: "",
-      type: "Hackathon",
-      link: "",
-    }
-  ]
 
-  events = []
-  
   return (
     <section id="events" className="py-24 bg-muted/30" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

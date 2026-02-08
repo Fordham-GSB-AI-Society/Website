@@ -15,7 +15,6 @@ export default function Home() {
       <Header />
       <HeroSection />
       <AboutSection />
-      <ProjectsSection/>
       <EventsSection />
       <LinkedinEmbeddedPosts />
       <TeamSection />
