@@ -12,16 +12,23 @@ export function EventsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   let events = [
     {
-      title: "Learn How to Predict Sports Games Results Workshop!",
-      date: "February 12th, 2026",
-      time: "1:00pm - 2:30pm",
-      location: "Room 333, Fordham Lincoln Center",
-      description: "",
-      image: "/workshop event.png",
+      title: "Exclusive Design Thinking & Agentic AI Workshop @ Microsoft NYC",
+      date: "March 2, 2026",
+      time: "8:00 AM - 2:00 PM (EST)",
+      location: "11 Times Square, New York, NY 10036",
+      description: `Fordham, get ready, the AI Society is taking you inside the Microsoft Office for an exclusive Design Thinking & Agentic AI Workshop you do not want to miss.
+ Come build something real with us and register using the link below!`,
+      image: "/Microsoft-Event.jpeg",
       type: "Workshop",
-      link: '/workshop'
-    }]
+      link: "/workshop"
+    }
+  ]
 
+  // Determine appropriate grid/container classes based on number of events
+  const isSingleEvent = events.length === 1
+  const gridOrFlexClass = isSingleEvent
+    ? "flex justify-center"
+    : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
 
   return (
     <section id="events" className="py-24 bg-muted/30" ref={ref}>
@@ -39,13 +46,14 @@ export function EventsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className={gridOrFlexClass}>
           {events.map((event, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
+              className={isSingleEvent ? "w-full max-w-md" : ""}
             >
               <Card className="hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full">
                 <CardHeader>
@@ -63,8 +71,8 @@ export function EventsSection() {
                       <img
                         src={event.image}
                         alt={event.title}
-                        className="rounded-lg max-h-100 object-cover w-full"
-                        style={{ maxWidth: 350 }}
+                        className="rounded-lg w-full h-auto"
+                        style={{ display: "block" }}
                       />
                     </div>
                   )}
@@ -88,7 +96,7 @@ export function EventsSection() {
 
                   {event.link ? (
                     <Button asChild className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                      <a href={event.link}>Learn More</a> 
+                      <a href={event.link}>Learn More</a>
                     </Button>
                   ) : (
                     <Button className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
