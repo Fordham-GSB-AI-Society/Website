@@ -14,13 +14,16 @@ interface EmbeddedPost {
 }
 
 const EMBEDDED_POSTS: EmbeddedPost[] = [
-
+  {
+    urn: "urn:li:share:7430318015436611584",
+    title: "Microsoft Agentic AI Workshop",
+    description: "",
+  },
   {
     urn: "urn:li:share:7392730789018427392",
     title: "AI Newsletter October 27-November 2",
     description: "",
   },
-
   {
     urn: "urn:li:share:7386163387128475648",
     title: "AI Jobs Newsletter October 20-26",
@@ -54,6 +57,14 @@ export function LinkedinEmbeddedPosts() {
     }
   }, [])
 
+  // Fixed card height (length) so all boxes/cards start out at exactly the same length/size
+  // Set both minHeight and height for robustness, and define a fixed width to avoid inconsistencies.
+  // Also use a fixed aspect for iframe to match within the card.
+
+  const CARD_HEIGHT = 970
+  const IFRAME_HEIGHT = 850
+  const CARD_WIDTH = 600 // to keep consistent with iframe width
+
   return (
     <section id="linkedin" className="py-24 bg-muted/30" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,40 +90,70 @@ export function LinkedinEmbeddedPosts() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
+              className="flex"
+              style={{
+                height: CARD_HEIGHT,
+                minHeight: CARD_HEIGHT,
+                // Optional: constrain width as well for strict layout
+                justifyContent: "center"
+              }}
             >
-              <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 h-full flex flex-col">
+              <Card
+                className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col"
+                style={{
+                  height: CARD_HEIGHT,
+                  minHeight: CARD_HEIGHT,
+                  width: CARD_WIDTH, // Fixed width for consistency
+                  maxWidth: "100%",
+                  display: "flex",
+                  flexDirection: "column"
+                }}
+              >
                 <CardContent className="p-0 flex-1 flex flex-col">
-                  <div className="w-full flex items-center justify-center bg-background p-4">
+                  <div
+                    className="w-full flex items-center justify-center bg-background p-4"
+                    style={{ minHeight: IFRAME_HEIGHT, height: IFRAME_HEIGHT, width: "100%" }}
+                  >
                     <iframe
                       src={`https://www.linkedin.com/embed/feed/update/${post.urn}?collapsed=1`}
-                      height="850"
-                      width="600"
+                      height={IFRAME_HEIGHT}
+                      width={CARD_WIDTH}
                       frameBorder="0"
                       allowFullScreen
                       title="Embedded post"
                       className="max-w-full"
+                      style={{
+                        minHeight: IFRAME_HEIGHT,
+                        height: IFRAME_HEIGHT,
+                        width: "100%",
+                        maxWidth: "100%",
+                        border: "none"
+                      }}
                     />
                   </div>
 
                   {/* Fallback content if embed doesn't load */}
-                  <div className="p-6 border-t">
-                    <h3 className="font-semibold mb-2">{post.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-4">{post.description}</p>
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="sm"
-                      className="w-full transition-all duration-300 hover:scale-105 hover:shadow-md hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] bg-transparent"
-                    >
-                      <a
-                        href={`https://www.linkedin.com/feed/update/${post.urn}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                  {/* Remove gap below the embedded card by removing padding, border, and margin bottom from fallback */}
+                  <div className="p-0 border-0 mt-0 flex-1 flex flex-col justify-end">
+                    <div className="px-6 pb-6">
+                      <h3 className="font-semibold mb-2">{post.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-4">{post.description}</p>
+                      <Button
+                        asChild
+                        variant="outline"
+                        size="sm"
+                        className="w-full transition-all duration-300 hover:scale-105 hover:shadow-md hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] bg-transparent"
                       >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        View on LinkedIn
-                      </a>
-                    </Button>
+                        <a
+                          href={`https://www.linkedin.com/feed/update/${post.urn}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          View on LinkedIn
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -124,9 +165,13 @@ export function LinkedinEmbeddedPosts() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-12"
+          className="text-center mt-6"
         >
-          <Button asChild size="lg" className="transition-all duration-300 hover:scale-105 hover:shadow-lg">
+          <Button
+            asChild
+            size="lg"
+            className="transition-all duration-300 hover:scale-105 hover:shadow-lg bg-[#ef5a74] text-white border-none"
+          >
             <a href="https://www.linkedin.com/company/fordham-ai-society" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-5 w-5 mr-2" />
               Follow Us on LinkedIn

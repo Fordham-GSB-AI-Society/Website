@@ -11,25 +11,27 @@ export function TeamSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const team = [
-    {
-      name: "Mainak Panja",
-      role: "President",
-      major: "FTMBA '26",
-      image: "/mainak.jpg",
-      email: "",
-      linkedin: "https://www.linkedin.com/in/mainak-m-panja-66850824/",
-      github: "",
-      bio: "Mainak is an MBA candidate at the Fordham Gabelli School of Business who brings rich experience in Product Management, Strategy, and AI. As President, Mainak is steering AIS toward becoming a leading hub for applied AI learning — connecting Fordham students to hands-on projects, industry partnerships, and career-ready skills in an evolving AI landscape."
-    },
+
     {
       name: "Ipsha Gautam",
-      role: "Vice President",
+      role: "Co-President",
       major: "MSAIB '27",
       image: "/ipsha.jpg",
       email: "",
       linkedin: "https://www.linkedin.com/in/ipsha-gautam-56137823a/",
       github: "",
       bio:"Ipsha brings a rare mix of marketing intelligence and quantitative modeling to every table she’s at. She understands both the art and architecture behind data. At Fordham, she’s pursuing her Master’s in Artificial Intelligence in Business, while serving as the Vice President of the AI Society, where she’s focused on translating technologies into accessible strategies for an AI-driven economy."
+    },
+
+    {
+      name: "SN Attreya",
+      role: "Co-President",
+      major: "FTMBA '27",
+      image: "/SN.jpg",
+      email: "",
+      linkedin: "https://www.linkedin.com/in/sn-attreya-a0629a74/",
+      github: "",
+      bio:"An MBA candidate at Fordham’s Gabelli School of Business, SN brings over six years of experience spanning product marketing, creative direction, and documentary storytelling — helping brands, startups, and nonprofits communicate their mission with impact. As VP of Marketing, SN is leading the creative vision and communications strategy for AIS — elevating how the community shares ideas, builds connections, and showcases the human side of AI innovation."
     },
 
     {
@@ -44,25 +46,24 @@ export function TeamSection() {
 
     },
     {
-      name: "Grace Assogba",
-      role: "Vice President of Event and Outreach",
-      major: "MSAIB '27",
-      image: "/grace.jpg",
-      email: "",
-      linkedin: "https://www.linkedin.com/in/grace-a-b21285173/",
-      github: "",
-      bio:"Grace brings a dynamic background spanning J.P. Morgan Chase, venture capital, her own AI startup Vyntage, and the innovation consultancy Marché Labs. Currently pursuing her MS in Artificial Intelligence at Fordham, Grace is focused on expanding partnerships and curating hands-on programming that helps students gain real-world AI experience and career readiness. Her leadership is helping AIS create a stronger bridge between learning, application, and industry impact."
-    },
-
-    {
-      name: "SN Attreya",
+      name: "Jake Mazie",
       role: "Vice President of Marketing",
       major: "FTMBA '27",
-      image: "/SN.jpg",
+      image: "/jake.jpeg",
       email: "",
-      linkedin: "https://www.linkedin.com/in/sn-attreya-a0629a74/",
+      linkedin: "https://www.linkedin.com/in/jake-mazie/",
       github: "",
-      bio:"An MBA candidate at Fordham’s Gabelli School of Business, SN brings over six years of experience spanning product marketing, creative direction, and documentary storytelling — helping brands, startups, and nonprofits communicate their mission with impact. As VP of Marketing, SN is leading the creative vision and communications strategy for AIS — elevating how the community shares ideas, builds connections, and showcases the human side of AI innovation."
+      bio: "Jake Mazie is an MBA candidate at Fordham’s Gabelli School of Business and serves as the Marketing Analytics Lead for the AI Society. Before Fordham, he worked on the Insights & Analytics team at Creative Artists Agency (CAA Sports), advising Fortune 500 clients on sponsorship strategy, consumer insights, and performance measurement. With four years of experience across sports, entertainment, and brand analytics, Jake focuses on turning complex datasets into strategic recommendations that inform business decisions, optimize partnerships, and deliver measurable business results. He is passionate about leveraging AI to advance data-driven strategy, creativity, and innovation."
+    },
+    {
+      name: "Habana Rubio",
+      role: "Vice President of Event and Outreach",
+      major: "MS Marketing Intelligence '27",
+      image: "/habana.jpg",
+      email: "",
+      linkedin: "https://www.linkedin.com/in/habana-rubio/",
+      github: "",
+      bio: ""
     },
 
     {
@@ -86,16 +87,6 @@ export function TeamSection() {
       ,
       bio:"An MS in Finance candidate at Fordham’s Gabelli School of Business with a computer science background, Shawyan works at the intersection of finance and AI. He builds practical tools for market research and data-driven analysis and has professional experience in software development and testing. As AVP of AI Research & Tech for the Fordham AI Society, he supports the club’s technical programming and resources for the student community."
     },
-        {
-      name: "Habana Rubio",
-      role: "Assistant VP of Event and Outreach",
-      major: "MS Marketing Intelligence '27",
-      image: "/habana.jpg",
-      email: "",
-      linkedin: "https://www.linkedin.com/in/habana-rubio/",
-      github: "",
-      bio: ""
-    },
 
     {
       name: "Gabriele Usai",
@@ -107,21 +98,10 @@ export function TeamSection() {
       github: "",
       bio: "Gabriele is analytical and strategic-driven with a background in Business Administration and experience as an IT Analyst in the banking industry; as Treasurer, he manages finances, tracks income and expenses, prepares transparent budgets for events while ensuring university policy compliance, and strengthens accountability through financial governance and strategic fund allocation."
     },
-    
-    {
-      name: "Jake Mazie",
-      role: "Marketing Analytics Lead",
-      major: "FTMBA '27",
-      image: "/jake.jpeg",
-      email: "",
-      linkedin: "https://www.linkedin.com/in/jake-mazie/",
-      github: "",
-      bio: "Jake Mazie is an MBA candidate at Fordham’s Gabelli School of Business and serves as the Marketing Analytics Lead for the AI Society. Before Fordham, he worked on the Insights & Analytics team at Creative Artists Agency (CAA Sports), advising Fortune 500 clients on sponsorship strategy, consumer insights, and performance measurement. With four years of experience across sports, entertainment, and brand analytics, Jake focuses on turning complex datasets into strategic recommendations that inform business decisions, optimize partnerships, and deliver measurable business results. He is passionate about leveraging AI to advance data-driven strategy, creativity, and innovation."
-    },
 
     {
       name: "Arnav Joshi",
-      role: "Digital Marketing Lead",
+      role: "Assistant VP of Marketing",
       major: "MSBA '27",
       image: "/arnav.jpeg",
       email: "",

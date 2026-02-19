@@ -90,7 +90,10 @@ export default function WorkshopEventPage() {
             <p className="text-2xl text-muted-foreground mb-8 max-w-4xl text-pretty">
               Fordham, get ready: the AI Society is taking you inside the Microsoft Office for an exclusive Design Thinking & Agentic AI Workshop you do not want to miss.
               <span className="block mt-4">
-                <strong className="text-foreground">Limited seats available.</strong> Come build something real with us!
+                <strong className="text-foreground">Limited: Only 150 seats available!</strong>
+              </span>
+              <span className="block mt-4 text-center w-full">
+                <strong className="text-foreground">Registration closes February 28th, 2026</strong>
               </span>
             </p>
             <div className="flex flex-wrap gap-6 mb-10">
@@ -215,7 +218,7 @@ export default function WorkshopEventPage() {
                   <div className="flex items-start gap-4">
                     <ArrowLeft className="h-7 w-7 text-[#ef5a74] mt-1 rotate-90" />
                     <div>
-                      <strong className="text-foreground">Limited Seats:</strong> This event is exclusive. Make sure to <a href={EVENT_FORM_LINK} className="underline" target="_blank" rel="noopener noreferrer">register right away</a> to claim your spot.
+                      <strong className="text-foreground">Limited Seats:</strong> This event is exclusive for only 150 people. Make sure to <a href={EVENT_FORM_LINK} className="underline" target="_blank" rel="noopener noreferrer">register right away</a> to claim your spot.
                     </div>
                   </div>
                 </div>
