@@ -93,7 +93,7 @@ export default function WorkshopEventPage() {
                 <strong className="text-foreground">Limited: Only 150 seats available!</strong>
               </span>
               <span className="block mt-4 text-center w-full">
-                <strong className="text-foreground">Registration closes February 28th, 2026</strong>
+                <strong className="text-foreground">Registration closed</strong>
               </span>
             </p>
             <div className="flex flex-wrap gap-6 mb-10">
@@ -119,30 +119,7 @@ export default function WorkshopEventPage() {
               </div>
             </div>
             {/* Signup button with external link */}
-            <Button
-              className="w-full md:w-auto transition-all duration-300 hover:scale-105 hover:shadow-lg text-2xl py-8"
-              asChild
-              size="lg"
-              style={{
-                background: "rgba(24, 24, 27, 0.88)",
-                color: "#ef5a74",
-                borderRadius: "0.5rem",
-                fontWeight: 600,
-                border: "1px solid rgba(239,90,116,0.13)",
-              }}
-            >
-              <a
-                href={EVENT_FORM_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "#ef5a74",
-                  textShadow: "0 1px 10px rgba(239,90,116,0.07)",
-                }}
-              >
-                Register Now
-              </a>
-            </Button>
+        
           </motion.div>
         </div>
       </section>
@@ -242,29 +219,6 @@ export default function WorkshopEventPage() {
               This is your invitation to step inside one of New York’s most iconic offices, work alongside peers and AI leaders, and create something real. Open to all Fordham students—no prior experience needed. Curiosity required!
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="transition-all duration-300 hover:scale-105 hover:shadow-lg text-2xl py-6"
-                asChild
-                style={{
-                  background: "rgba(24, 24, 27, 0.88)",
-                  color: "#ef5a74",
-                  borderRadius: "0.5rem",
-                  fontWeight: 600,
-                  border: "1px solid rgba(239,90,116,0.13)",
-                }}
-              >
-                <a
-                  href={EVENT_FORM_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    color: "#ef5a74",
-                  }}
-                >
-                  Register Now
-                </a>
-              </Button>
               <Button
                 size="lg"
                 variant="outline"
