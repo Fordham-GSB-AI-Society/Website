@@ -7,12 +7,21 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 
+interface EventItem {
+  type: string
+  title: string
+  image?: string
+  description: string
+  date: string
+  time: string
+  location: string
+  link?: string
+}
+
 export function EventsSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-  let events = [
-    // Upcoming events will be added here
-  ]
+  let events: EventItem[] = []
 
   const hasEvents = events.length > 0
   const gridOrFlexClass = events.length === 1
