@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "framer-motion"
 import Image from "next/image"
@@ -142,10 +142,19 @@ export function GallerySection() {
   const [activeEventIndex, setActiveEventIndex] = useState(0)
   const [viewAll, setViewAll] = useState(false)
   const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE)
+  const [sliderImages, setSliderImages] = useState<string[]>([])
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const activeEvent = EVENTS_CONFIG[activeEventIndex]
+
+  // Shuffle and pick 6 random images for the slider on mount/event change
+  useEffect(() => {
+    if (activeEvent) {
+      const shuffled = [...activeEvent.images].sort(() => 0.5 - Math.random())
+      setSliderImages(shuffled.slice(0, 6))
+    }
+  }, [activeEvent])
 
   const getImagePath = (folder: string, fileName: string) => {
     return `/${folder}/${fileName}`
@@ -161,8 +170,6 @@ export function GallerySection() {
     setVisibleCount(prev => prev + 9)
   }
 
-  // Use only 6 highlights for the slider for peak performance
-  const sliderImages = activeEvent?.images.slice(0, 6) || []
   const visibleImages = activeEvent?.images.slice(0, viewAll ? visibleCount : undefined) || []
   const hasMore = viewAll && visibleCount < (activeEvent?.images.length || 0)
 
