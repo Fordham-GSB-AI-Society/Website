@@ -29,6 +29,9 @@ export function Header() {
             <a href="#events" className="text-muted-foreground hover:text-foreground transition-colors">
               Events
             </a>
+            <a href="#gallery" className="text-muted-foreground hover:text-foreground transition-colors">
+              Gallery
+            </a>
             <a href="#team" className="text-muted-foreground hover:text-foreground transition-colors">
               Team
             </a>
@@ -72,6 +75,12 @@ export function Header() {
                   className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:translate-x-2"
                 >
                   Events
+                </a>
+                <a
+                  href="#gallery"
+                  className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:translate-x-2"
+                >
+                  Gallery
                 </a>
                 <a
                   href="#team"
